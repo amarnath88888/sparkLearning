@@ -12,7 +12,8 @@ object jsonFileByDF {
     var sc = new SparkContext(conf);
     val sqlContext = new SQLContext(sc);
     // Create the DataFrame
-    val df = sqlContext.read.json("data/input/sample.json")
+    val df = sqlContext.jsonFile("data/input/sample.json").registerTempTable("JSON");
+    val results = sqlContext.sql("""SELECT * FROM JSON""").show()
     //df.show();
     
  /*   +--------------------+-----------+--------+-----+--------------------+
@@ -33,8 +34,8 @@ object jsonFileByDF {
        |    |-- $date: string (nullable = true)
            */
     
-   val df1 = df.filter(df("deviceID") === 2.0 /*&& df("pulse") === 1.0*/)
-   df1.filter(df("pulse") === 1.0).show()
+  // val df1 = df.filter(df("deviceID") === 2.0 /*&& df("pulse") === 1.0*/)
+   //df1.filter(df("pulse") === 1.0).show()
   }
   
 }
