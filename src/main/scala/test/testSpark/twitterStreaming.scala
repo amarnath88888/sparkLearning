@@ -14,10 +14,10 @@ import org.apache.spark.streaming.twitter.TwitterUtils
  */
 object twitterStreaming {
   def main(args: Array[String]){
-    val apiKey = "trXAB7iOh236fLcvYQiGvRAQz";
-    val apiSecret = "dlKEo5CbyqDkigXJWKFIaKAuoRuv5bGyGGEl6UM6E3PSLREPSR";
-    val accessToken = "436670386-Lb8Z6IBPCF5zk9spAV0nj1XjHnHIW2n29WxkriXx";
-    val accessTokenSecret = "SY7h4Bb2rycpueCluKnqS3VvOCfXfifUf7EOE3Lr4ZgkM";
+    val apiKey = "***";
+    val apiSecret = "####";
+    val accessToken = "%%%%%%%";
+    val accessTokenSecret = "$$$$$$";
     configureTwitterCredentials(apiKey, apiSecret, accessToken, accessTokenSecret);
     
     val sparkConf = new SparkConf().setAppName("TwitterPopularTagsTest").setMaster("local[4]")
